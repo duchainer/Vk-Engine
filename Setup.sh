@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 #
-# Compile the Vulkan
+# Compile the VulkanMemoryAllocator
 #
 pushd ..
 git clone git@github.com:GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator.git
@@ -21,3 +21,12 @@ cmake .
 make .
 # Back to the root of the repo
 popd
+
+#
+# For Ubuntu
+# Fix
+#    lld-linux: error: unable to find library -lvulkan
+#    lld-linux: error: unable to find library -lunwind
+#    [Metaprogram] Compilation failed for module Core
+#
+sudo apt-get install libvulkan-dev libunwind-dev
