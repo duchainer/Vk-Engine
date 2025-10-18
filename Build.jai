@@ -18,7 +18,7 @@ Num_Modules :: #run type_info(ModuleID).values.count;
 Bindings_To_Generate :: string.[
     "Modules/ImGui",
     "Modules/Vulkan",
-    "Modules/JoltPhysics",
+    // "Modules/JoltPhysics",
 ];
 
 #insert -> string {
