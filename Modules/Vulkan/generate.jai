@@ -214,7 +214,7 @@ vulkan_visitor :: (decl: *Declaration, parent_decl: *Declaration) -> Declaration
     if decl.kind == .TYPEDEF && decl.type.type_of_typedef &&  decl.type.type_of_typedef.name == "VkFlags" {
         //print("TYPEDEF(VkFlags):%\n", << decl.name);
         flags_name := replace(decl.name, "Flags", "FlagBits");
-        found, enum_decl := table_find_new(*available_flag_bits, flags_name);
+        found, enum_decl := table_find(*available_flag_bits, flags_name);
         if found {
             type := New(CType);
             type.type_of_enum = enum_decl;
